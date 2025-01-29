@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine?</h1>
+        <form id="valentineForm">
+            <div class="form-step" id="step1">
+                <label for="name">What is your name?</label>
+                <input type="text" id="name" name="name" required>
+                <button type="button" onclick="nextStep(1)">Next</button>
+            </div>
+            <div class="form-step" id="step2" style="display:none;">
+                <label for="response">Will you be my Valentine?</label>
+                <select id="response" name="response" required>
+                    <option value="">Select an option</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+                <button type="button" onclick="nextStep(2)">Submit</button>
+            </div>
+            <div class="form-step" id="step3" style="display:none;">
+                <h2 id="finalMessage"></h2>
+                <button type="button" onclick="restartForm()">Start Over</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
