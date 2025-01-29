@@ -11,6 +11,11 @@ h1 {
     color: #e63946;
 }
 
+label {
+    font-size: 14px;
+    text-align: center;
+}
+
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -18,6 +23,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 input[type="text"],
@@ -34,10 +40,11 @@ button {
     background-color: #e63946;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 30px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    margin: 30px 10px 10px 10px;
 }
 
 button:hover {
@@ -53,4 +60,28 @@ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 14px;
+}
+
+.options, .times, .foods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.option, .time, .food {
+    width: 40%;
+    border: #333 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
 }

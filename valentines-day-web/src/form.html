@@ -11,20 +11,40 @@
         <h1>Will You Be My Valentine?</h1>
         <form id="valentineForm">
             <div class="form-step" id="step1">
-                <label for="name">What is your name?</label>
-                <input type="text" id="name" name="name" required>
-                <button type="button" onclick="nextStep(1)">Next</button>
+                <label>Will you be my Valentine?</label>
+                <div>
+                    <button type="button" onclick="nextStep(1)">Yes</button>
+                    <button type="button" onclick="restartForm()">No</button>
+                </div>
             </div>
             <div class="form-step" id="step2" style="display:none;">
-                <label for="response">Will you be my Valentine?</label>
-                <select id="response" name="response" required>
-                    <option value="">Select an option</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
-                <button type="button" onclick="nextStep(2)">Submit</button>
+                <label>What Do You Want To Do?</label>
+                <div class="options">
+                    <div class="option" onclick="nextStep(2, 'Day Spa')">Day Spa</div>
+                    <div class="option" onclick="nextStep(2, 'Few Days Trip')">Few Days Trip</div>
+                    <div class="option" onclick="nextStep(2, 'Walk around')">Walk around</div>
+                    <div class="option" onclick="nextStep(2, 'Cuddle at home')">Cuddle at home</div>
+                </div>
             </div>
             <div class="form-step" id="step3" style="display:none;">
+                <label>How Long Are You Ready to Spend?</label>
+                <div class="times">
+                    <div class="time" onclick="nextStep(3, 'Weekend')">All weekend</div>
+                    <div class="time" onclick="nextStep(3, 'Few Days')">Few Days</div>
+                    <div class="time" onclick="nextStep(3, 'Day')">One Day</div>
+                    <div class="time" onclick="nextStep(3, 'Few hours')">Okay.... Few Hours</div>
+                </div>
+            </div>
+            <div class="form-step" id="step4" style="display:none;">
+                <label>Food!</label>
+                <div class="foods">
+                    <div class="food" onclick="nextStep(4, 'chicken')">Chicken Nuggets</div>
+                    <div class="food" onclick="nextStep(4, 'restoraunt')">Restoraunt with great view</div>
+                    <div class="food" onclick="nextStep(4, 'home food')">Cook at home</div>
+                    <div class="food" onclick="nextStep(4, 'coffee')">Coffee to Go</div>
+                </div>
+            </div>
+            <div class="form-step" id="step5" style="display:none;">
                 <h2 id="finalMessage"></h2>
                 <button type="button" onclick="restartForm()">Start Over</button>
             </div>
