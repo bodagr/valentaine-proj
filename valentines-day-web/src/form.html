@@ -9,7 +9,8 @@
 <body>
     <div class="container">
         <h1>Will You Be My Valentine?</h1>
-        <form id="valentineForm">
+        <form id="valentineForm" name="valentineForm" netlify>
+            <input type="hidden" name="form-name" value="valentineForm">
             <div class="form-step" id="step1">
                 <label>Will you be my Valentine?</label>
                 <div>
@@ -19,7 +20,7 @@
             </div>
             <div class="form-step" id="step2" style="display:none;">
                 <label>What Do You Want To Do?</label>
-                <div class="options">
+                <div>
                     <div class="option" onclick="nextStep(2, 'Day Spa')">Day Spa</div>
                     <div class="option" onclick="nextStep(2, 'Few Days Trip')">Few Days Trip</div>
                     <div class="option" onclick="nextStep(2, 'Walk around')">Walk around</div>
@@ -28,21 +29,16 @@
             </div>
             <div class="form-step" id="step3" style="display:none;">
                 <label>How Long Are You Ready to Spend?</label>
-                <div class="times">
+                <div>
                     <div class="time" onclick="nextStep(3, 'Weekend')">All weekend</div>
                     <div class="time" onclick="nextStep(3, 'Few Days')">Few Days</div>
                     <div class="time" onclick="nextStep(3, 'Day')">One Day</div>
-                    <div class="time" onclick="nextStep(3, 'Few hours')">Okay.... Few Hours</div>
                 </div>
             </div>
             <div class="form-step" id="step4" style="display:none;">
-                <label>Food!</label>
-                <div class="foods">
-                    <div class="food" onclick="nextStep(4, 'chicken')">Chicken Nuggets</div>
-                    <div class="food" onclick="nextStep(4, 'restoraunt')">Restoraunt with great view</div>
-                    <div class="food" onclick="nextStep(4, 'home food')">Cook at home</div>
-                    <div class="food" onclick="nextStep(4, 'coffee')">Coffee to Go</div>
-                </div>
+                <label>Your Name:</label>
+                <input type="text" id="name" name="name" required>
+                <button type="button" onclick="submitForm()">Submit</button>
             </div>
             <div class="form-step" id="step5" style="display:none;">
                 <h2 id="finalMessage"></h2>
