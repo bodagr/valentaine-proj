@@ -52,6 +52,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    window.moveButton = function() {
+        const noButton = document.getElementById('noButton');
+        const container = noButton.parentElement;
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = noButton.getBoundingClientRect();
+
+        const maxX = (containerRect.width - buttonRect.width)/2;
+        const maxY = (containerRect.height - buttonRect.height)/2;
+
+        const newX = Math.floor(Math.random() * maxX);
+        const newY = Math.floor(Math.random() * maxY);
+
+        noButton.style.position = 'absolute';
+        noButton.style.left = `${newX}px`;
+        noButton.style.top = `${newY}px`;
+    };
+
     window.restartForm = function() {
         currentStep = 0;
         selectedOption = '';

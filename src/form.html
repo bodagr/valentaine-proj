@@ -8,23 +8,41 @@
 </head>
 <body>
     <div class="container">
-        <h1>Will You Be My Valentine?</h1>
+        <h1>А ю гонна бі май Валентайн?</h1>
         <form id="valentineForm" name="valentineForm" netlify>
             <input type="hidden" name="form-name" value="valentineForm">
             <div class="form-step" id="step1">
-                <label>Will you be my Valentine?</label>
-                <div>
+                <label>Вот ду ю сінк?</label>
+                <div class="choices">
+                    <img class="main_img" src="img/pedro-raccoon.gif" alt="pedro pedro"><br>
                     <button type="button" onclick="nextStep(1)">Yes</button>
-                    <button type="button" onclick="restartForm()">No</button>
+                    <button type="button" id="noButton" onmouseover="moveButton()">No</button>
                 </div>
             </div>
             <div class="form-step" id="step2" style="display:none;">
-                <label>What Do You Want To Do?</label>
+                <label>Вот ду ю вонт ту ду?</label>
                 <div class="options">
-                    <div class="option" onclick="nextStep(2, 'Day Spa')">Day Spa</div>
-                    <div class="option" onclick="nextStep(2, 'Few Days Trip')">Few Days Trip</div>
-                    <div class="option" onclick="nextStep(2, 'Walk around')">Walk around</div>
-                    <div class="option" onclick="nextStep(2, 'Cuddle at home')">Cuddle at home</div>
+                    <div class="option" onclick="nextStep(2, 'Spa Day')">Day in Spa
+                        <img class="img_opt" src="img/massage.gif" alt="Spa Day">
+                    </div>
+                    <div class="option" onclick="nextStep(2, 'Road Trip')">Роад Тріп
+                        <img class="img_opt" src="img/travel_2.jpg" alt="Road Trip">
+                        <p>- Бьютіфул ЛА</p>
+                        <p>- Сан Дієго</p>
+                        <p>- Орегон</p>
+                    </div>
+                    <div class="option" onclick="nextStep(2, 'Walk Around')">Потусить десь по мєсту
+                        <img class="img_opt" src="img/walk.jpg" alt="Walk Around">
+                        <p>- хайк далеко і довго</p>
+                        <p>- кіношечка</p>
+                        <p>- парк, музей і т.д.</p>
+                    </div>
+                    <div class="option" onclick="nextStep(2, 'Home')">Реді ту стей хоум
+                        <img class="img_opt" src="img/stay_home.png" alt="Home">
+                        <p>- турецькі серіали з піратського сайту</p>
+                        <p>- попкорн</p>
+                        <p>- лахмате колюче одіяло</p>
+                    </div>
                 </div>
             </div>
             <div class="form-step" id="step3" style="display:none;">
