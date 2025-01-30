@@ -69,7 +69,7 @@ footer {
 }
 
 .option, .time, .food {
-    width: 40%;
+    width: 48%;
     border: #333 1px solid;
     display: flex;
     justify-content: center;
