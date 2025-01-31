@@ -98,7 +98,7 @@ footer {
     font-size: 14px;
 }
 
-.options, .times, .foods {
+.options, .times, .foods, .finalImg {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -119,11 +119,17 @@ footer {
     transition: background-color 0.3s;
 }
 
+.finalImgContainer img{
+    max-width: 40%;
+    height: auto;
+    margin-top: 40px;
+}
+
 .option:hover {
     background-color: #e0e0e0;
 }
 
-.option img {
+.option img, .time img, .food img {
     margin-top: 10px; /* Add some space between the text and the image */
     max-width: 100%; /* Ensure the image fits within the div */
     height: auto;

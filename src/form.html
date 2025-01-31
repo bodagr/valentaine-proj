@@ -15,8 +15,8 @@
                 <label>Вот ду ю сінк?</label>
                 <div class="choices">
                     <img class="main_img" src="img/pedro-raccoon.gif" alt="pedro pedro"><br>
-                    <button type="button" onclick="nextStep(1)">Yes</button>
-                    <button type="button" id="noButton" onmouseover="moveButton()">No</button>
+                    <button type="button" onclick="nextStep(1)">Єс</button>
+                    <button type="button" id="noButton" onmouseover="moveButton()">Ноу</button>
                 </div>
             </div>
             <div class="form-step" id="step2" style="display:none;">
@@ -27,40 +27,79 @@
                     </div>
                     <div class="option" onclick="nextStep(2, 'Road Trip')">Роад Тріп
                         <img class="img_opt" src="img/travel_2.jpg" alt="Road Trip">
-                        <p>- Бьютіфул ЛА</p>
+                        <p>- ЛА нейберхуд</p>
                         <p>- Сан Дієго</p>
-                        <p>- Орегон</p>
+                        <p>- Орегон вайлд каунті</p>
                     </div>
                     <div class="option" onclick="nextStep(2, 'Walk Around')">Потусить десь по мєсту
                         <img class="img_opt" src="img/walk.jpg" alt="Walk Around">
-                        <p>- хайк далеко і довго</p>
+                        <p>- крейзі хайк</p>
                         <p>- кіношечка</p>
                         <p>- парк, музей і т.д.</p>
                     </div>
-                    <div class="option" onclick="nextStep(2, 'Home')">Реді ту стей хоум
+                    <div class="option" onclick="nextStep(2, 'Stay At Home')">Реді ту стей хоум
                         <img class="img_opt" src="img/stay_home.png" alt="Home">
                         <p>- турецькі серіали з піратського сайту</p>
                         <p>- попкорн</p>
-                        <p>- лахмате колюче одіяло</p>
+                        <p>- колюче одіялко</p>
                     </div>
                 </div>
             </div>
             <div class="form-step" id="step3" style="display:none;">
-                <label>How Long Are You Ready to Spend?</label>
+                <label>Вот дейтс із воркінг фо ю?</label>
                 <div class="times">
-                    <div class="time" onclick="nextStep(3, 'Weekend')">All weekend</div>
-                    <div class="time" onclick="nextStep(3, 'Few Days')">Few Days</div>
-                    <div class="time" onclick="nextStep(3, 'Day')">One Day</div>
+                    <div class="time" onclick="nextStep(3, 'All Weekend')">Реді хоч на всі вихідні(14-17 Feb)
+                        <img class="img_opt" src="img/time_all.jpg" alt="Weekend">
+                    </div>
+                    <div class="time">Можна на декілька днів
+                        <img class="img_opt" src="img/time_days.jpg" alt="A Few Days">
+                        <select id="days" name="days" onchange="nextStep(3, this.value)">
+                            <option value="">Select days:</option>
+                            <option value="14-15">14 - 15 Feb</option>
+                            <option value="15-16">15 - 16 Feb</option>
+                            <option value="16-17">16 - 17 Feb</option>
+                        </select>
+
+                    </div>
+                    <div class="time" onclick="nextStep(3, 'Weekend Day')">Окей в якийсь із вихідних
+                        <img class="img_opt" src="img/time_day.jpg" alt="Day">
+                    </div>
+                    <div class="time" onclick="nextStep(3, 'A Few Hours')">Ой.. та там квартиру прибирати потрібно, але пару годин знайду
+                        <img class="img_opt" src="img/time_hour_2.jpg" alt="Hour">
+                    </div>
                 </div>
             </div>
             <div class="form-step" id="step4" style="display:none;">
-                <label>Your Name:</label>
-                <input type="text" id="name" name="name" required>
-                <button type="button" onclick="submitForm()">Submit</button>
+                <label>Вот ду ю вонт ту іт?</label>
+                <div class="foods">
+                    <div class="food" onclick="nextStep(4, 'Nuggets')">Чікен Нагетс
+                        <img class="img_opt" src="img/nuggets.jpg" alt="Chicken Nuggets">
+                    </div>
+                    <div class="food" onclick="nextStep(4, 'Restaurant')">Гарненький ресторанчик
+                        <img class="img_opt" src="img/restaurant.gif" alt="Restoraunt">
+                    </div>
+                    <div class="food" onclick="nextStep(4, 'Home Food')">Готуємо вдома
+                        <img class="img_opt" src="img/cooking_home.jpg" alt="Home Food">
+                    </div>
+                    <div class="food" onclick="nextStep(4, 'Coffee To Go')">Головне щоб була кава, а їсти знайдемо
+                        <img class="img_opt" src="img/coffee.png" alt="Coffee">
+                    </div>
+                </div>
             </div>
             <div class="form-step" id="step5" style="display:none;">
+                <label>Пліз конфьорм йо селекшен:</label>
                 <h2 id="finalMessage"></h2>
-                <button type="button" onclick="restartForm()">Start Over</button>
+                <button type="button" onclick="submitForm()">Сабміт</button>
+                <button type="button" onclick="restartForm()">Старт Егейн</button>
+            </div>
+            <div class="form-step" id="step6" style="display:none;">
+                <div class="finalImg">
+                    <div class="finalImgContainer">
+                        <img class="img_opt" src="img/final.PNG" alt="Completed">
+                    </div>
+                </div>
+                <h2 id="lastStepMessage">Сенкью фо біін май Валентайн!</h2>
+                <button type="button" onclick="restartForm()">Старт зе форм егейн</button>
             </div>
         </form>
     </div>

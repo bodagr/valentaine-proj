@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentStep = 0;
     let selectedOption = '';
     let selectedTime = '';
+    let selectedFood = '';
 
     function showStep(step) {
         steps.forEach((stepElement, index) => {
@@ -20,17 +21,39 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (step === 3) {
             selectedTime = value;
             currentStep = 3;
+        } else if (step === 4) {
+            selectedFood = value;
+            currentStep = 4;
+            updateFinalMessage();
+        } else if (step === 5) {
+            currentStep = 5;
         }
         showStep(currentStep);
     };
 
+    function updateFinalMessage() {
+        const finalMessage = document.getElementById('finalMessage');
+        finalMessage.innerHTML = `
+            <p>Вот Ту Ду: ${selectedOption}</p>
+            <p>Хав Лонг Ту Ду: ${selectedTime}</p>
+            <p>Вот Ту Іт: ${selectedFood}</p>
+        `;
+    };
+
+    window.selectDay = function(day) {
+        if (day) {
+            selectedDays = day;
+            currentStep = 4;
+            showStep(currentStep);
+        }
+    };
+
     window.submitForm = function() {
-        const name = document.getElementById('name').value;
         const data = {
             'form-name': 'valentineForm',
-            name: name,
             option: selectedOption,
-            time: selectedTime
+            time: selectedTime,
+            food: selectedFood
         };
 
         fetch('/', {
@@ -41,13 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
             body: new URLSearchParams(data).toString()
         })
         .then(response => {
-            document.getElementById('finalMessage').innerText = 'Form submitted successfully!';
-            currentStep = 4;
+            currentStep = 5;
             showStep(currentStep);
         })
         .catch(error => {
             document.getElementById('finalMessage').innerText = 'Error submitting form.';
-            currentStep = 4;
+            currentStep = 5;
             showStep(currentStep);
         });
     };
@@ -73,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentStep = 0;
         selectedOption = '';
         selectedTime = '';
+        selectedFood = '';
         form.reset();
         showStep(currentStep);
     };
