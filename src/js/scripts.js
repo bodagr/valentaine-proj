@@ -52,8 +52,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.submitForm = function() {
+        const name = document.getElementById('name').value;
         const data = {
             'form-name': 'valentineForm',
+            name: name,
             option: selectedOption,
             time: selectedTime,
             food: selectedFood
