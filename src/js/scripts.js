@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
             updateFinalMessage();
         } else if (step === 5) {
             currentStep = 5;
+        } else if (step === 6) {
+            currentStep = 6;
         }
         showStep(currentStep);
     };
@@ -52,10 +54,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     window.submitForm = function() {
-        const name = document.getElementById('name').value;
         const data = {
             'form-name': 'valentineForm',
-            name: name,
             option: selectedOption,
             time: selectedTime,
             food: selectedFood
@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const containerRect = container.getBoundingClientRect();
         const buttonRect = noButton.getBoundingClientRect();
 
-        const maxX = (containerRect.width - buttonRect.width)/2;
-        const maxY = (containerRect.height - buttonRect.height)/2;
+        const maxX = (containerRect.width - buttonRect.width)/2.5;
+        const maxY = (containerRect.height - buttonRect.height)/2.5;
 
         const newX = Math.floor(Math.random() * maxX);
         const newY = Math.floor(Math.random() * maxY);

@@ -11,22 +11,21 @@
         <h1>А ю гонна бі май Валентайн?</h1>
         <form id="valentineForm" name="valentineForm" netlify>
             <input type="hidden" name="form-name" value="valentineForm">
-            <input type="hidden" id="selectedOption" name="selectedOption">
-            <input type="hidden" id="selectedTime" name="selectedTime">
-            <!-- <input type="hidden" id="selectedDays" name="selectedDays"> -->
-            <input type="hidden" id="selectedFood" name="selectedFood">
+            <input type="hidden" id="selectedOption" name="selectedOption" value="valentineForm">
+            <input type="hidden" id="selectedTime" name="selectedTime" value="valentineForm">
+            <input type="hidden" id="selectedFood" name="selectedFood" value="valentineForm">
             <div class="form-step" id="step1">
                 <label>Вот ду ю сінк?</label>
                 <div class="choices">
                     <img class="main_img" src="img/pedro-raccoon.gif" alt="pedro pedro"><br>
                     <button type="button" onclick="nextStep(1)">Єс</button>
-                    <button type="button" id="noButton" onmouseover="moveButton()">Ноу</button>
+                    <button type="button" id="noButton" onmouseover="moveButton()" onclick="nextStep(6)">Ноу</button>
                 </div>
             </div>
             <div class="form-step" id="step2" style="display:none;">
                 <label>Вот ду ю вонт ту ду?</label>
                 <div class="options">
-                    <div class="option" onclick="nextStep(2, 'Spa Day')">Day in Spa
+                    <div class="option" onclick="nextStep(2, 'Spa Day')">День в СПА
                         <img class="img_opt" src="img/massage.gif" alt="Spa Day">
                     </div>
                     <div class="option" onclick="nextStep(2, 'Road Trip')">Роад Тріп
@@ -58,10 +57,10 @@
                     <div class="time">Можна на декілька днів
                         <img class="img_opt" src="img/time_days.jpg" alt="A Few Days">
                         <select id="days" name="days" onchange="nextStep(3, this.value)">
-                            <option value="">Select days:</option>
-                            <option value="14-15">14 - 15 Feb</option>
-                            <option value="15-16">15 - 16 Feb</option>
-                            <option value="16-17">16 - 17 Feb</option>
+                            <option value="">Селект дейс:</option>
+                            <option value="14-15 Feb">14 - 15 Feb</option>
+                            <option value="15-16 Feb">15 - 16 Feb</option>
+                            <option value="16-17 Feb">16 - 17 Feb</option>
                         </select>
 
                     </div>
@@ -103,6 +102,15 @@
                     </div>
                 </div>
                 <h2 id="lastStepMessage">Сенкью фо біін май Валентайн!</h2>
+                <button type="button" onclick="restartForm()">Старт зе форм егейн</button>
+            </div>
+            <div class="form-step" id="step7" style="display:none;">
+                <div class="finalImg">
+                    <div class="finalImgContainer">
+                        <img class="img_opt" src="img/said_no.jpg" alt="Completed">
+                    </div>
+                </div>
+                <h2 id="lastStepMessage">Ой... навєрно соскочило. Ну нічо, можна почати з початку</h2>
                 <button type="button" onclick="restartForm()">Старт зе форм егейн</button>
             </div>
         </form>
