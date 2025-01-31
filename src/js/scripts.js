@@ -17,12 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
             currentStep = 1;
         } else if (step === 2) {
             selectedOption = value;
+            document.getElementById('selectedOption').value = value;
             currentStep = 2;
         } else if (step === 3) {
             selectedTime = value;
+            document.getElementById('selectedTime').value = value;
             currentStep = 3;
         } else if (step === 4) {
             selectedFood = value;
+            document.getElementById('selectedFood').value = value;
             currentStep = 4;
             updateFinalMessage();
         } else if (step === 5) {
