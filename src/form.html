@@ -44,7 +44,7 @@
                         <img class="img_opt" src="img/stay_home.png" alt="Home">
                         <p>- турецькі серіали з піратського сайту</p>
                         <p>- попкорн</p>
-                        <p>- колюче одіялко</p>
+                        <p>- якесь колюче одіялко</p>
                     </div>
                 </div>
             </div>
@@ -57,15 +57,20 @@
                     <div class="time">Можна на декілька днів
                         <img class="img_opt" src="img/time_days.jpg" alt="A Few Days">
                         <select id="days" name="days" onchange="nextStep(3, this.value)">
-                            <option value="">Селект дейс:</option>
+                            <option value="">Селект дейз:</option>
                             <option value="14-15 Feb">14 - 15 Feb</option>
                             <option value="15-16 Feb">15 - 16 Feb</option>
                             <option value="16-17 Feb">16 - 17 Feb</option>
                         </select>
 
                     </div>
-                    <div class="time" onclick="nextStep(3, 'Weekend Day')">Окей в якийсь із вихідних
+                    <div class="time">Окей в якийсь із вихідних
                         <img class="img_opt" src="img/time_day.jpg" alt="Day">
+                        <select id="days" name="days" onchange="nextStep(3, this.value)">
+                            <option value="">Селект дейз:</option>
+                            <option value="15 Feb">15 Feb</option>
+                            <option value="16 Feb">16 Feb</option>
+                        </select>
                     </div>
                     <div class="time" onclick="nextStep(3, 'A Few Hours')">Ой.. та там квартиру прибирати потрібно, але пару годин знайду
                         <img class="img_opt" src="img/time_hour_2.jpg" alt="Hour">
